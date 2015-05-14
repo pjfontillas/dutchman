@@ -1,0 +1,24 @@
+<div class="jumbotron center-all">
+<div>
+  <h1>Welcome to The Frying Dutchman!</h1>
+  <p>The Frying Dutchman is is an all-you-can-eat seafood restaurant located in the beautiful state of North Takoma.</p>
+
+  <div class="row">
+    <div class="col-sm-4">
+      <table class="table">
+        <tr>
+          <td>Full bins of shrimp:</td>
+          <td><span id="shrimp-bin-id" class="badge"><%= @num_bins %></span></td>
+        </tr>
+        <tr>
+          <td>Busboy status:</td>
+          <td><span id="busboy-status-id" class="badge"><%= @busboy_status %></span></td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <div>
+    <button id="restock-button-id" type="button" class="btn btn-primary">Restock</button>
+  </div>
+</div>
+</div>
