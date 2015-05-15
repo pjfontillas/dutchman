@@ -50,7 +50,8 @@ with login: guest and password: guest.
 
 > Yaar! Twas a moonless night, dark as pitch, when out of the mist came a
 > beast more stomach than man.
-> Homer is a simple python application that endlessly consumes shrimp from the buffet.  To start him going:
+
+Homer is a simple python application that endlessly consumes shrimp from the buffet.  To start him going:
 
 1. Open another SSH session with `vagrant ssh`.
 1. In this session, start the Homer program with these commands:
