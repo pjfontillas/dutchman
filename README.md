@@ -43,7 +43,8 @@ person, named `Pat`, in the `delivery_people` table.
 
 The buffet is represented by the `buffet` queue in the RabbitMQ instance
 running in the Vagrant VM. A web monitoring interface for this instance is
-accessible on your local machine at `http://localhost:15673`.
+accessible on your local machine at `http://localhost:15673`. You can log in
+with login: guest and password: guest.
 
 ### Homer
 
