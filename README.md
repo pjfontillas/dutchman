@@ -3,13 +3,13 @@ http://www.hulu.com/watch/23445
 
 ## Setup
 To run the programs in these challenges, you'll need working versions of
-[Python](www.python.org), [Ruby](www.ruby-lang.org), [Rails](rubyonrails.org),
-[SQLite](www.sqlite.org), and [RabbitMQ](www.rabbitmq.com).  These things are
-all installed in the [Vagrant](www.vagrantup.com) image at the root of this
+[Python](http://www.python.org), [Ruby](http://www.ruby-lang.org), [Rails](http://rubyonrails.org),
+[SQLite](http://www.sqlite.org), and [RabbitMQ](http://www.rabbitmq.com).  These things are
+all installed in the [Vagrant](http://www.vagrantup.com) image at the root of this
 repo to get an environment set up hassle-free.  The setup instructions below
 assume you will be using this Vagrant environment.
 
-1. Install [Vagrant](www.vagrantup.com).
+1. Install [Vagrant](http://www.vagrantup.com).
 1. Clone this repository.
 1. From the root of this repository, run `vagrant up` (this may take a while to
    download and configure all of the dependencies).
