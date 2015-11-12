@@ -7,7 +7,7 @@ namespace :mq do
     conn = Bunny.new
     conn.start
     ch = conn.create_channel
-    ch.queue("shrimp-deliveries")
+    ch.queue("orders")
     ch.queue("buffet")
   end
 end

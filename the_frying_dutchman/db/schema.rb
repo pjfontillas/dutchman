@@ -13,13 +13,15 @@
 
 ActiveRecord::Schema.define(version: 20150515005800) do
 
-  create_table "delivery_people", force: :cascade do |t|
+  create_table "employees", force: :cascade do |t|
     t.string "name"
+    t.string "role"
     t.string "status"
   end
 
-  create_table "shrimp_deliveries", force: :cascade do |t|
-    t.integer  "num_shrimp"
+  create_table "stockroom_items", force: :cascade do |t|
+    t.string "name"
+    t.integer  "item_count"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

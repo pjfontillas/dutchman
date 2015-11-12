@@ -21,8 +21,9 @@ assume you will be using this Vagrant environment.
 This program is a Rails application that renders a single web page representing
 The Frying Dutchman restaurant from the best Simpsons episode ever.  The Frying
 Dutchman is an all-you-can eat fried seafood restaurant, and this web page
-displays how many shrimp are in the stock room, and how many shrimp are out in
-the buffet.  The page must be reloaded to see any changes in these counts.
+displays what orders the restaurant has made for food, what is in the stock room, 
+and how many shrimp are out in the buffet.  The page must be reloaded to see any 
+changes in these counts.
 
 To start this program, follow these steps:
 
@@ -38,13 +39,10 @@ To start this program, follow these steps:
 
 The number of shrimp in the stock room is kept in a SQLite database
 (`/vagrant/the_frying_dutchman/db/development.sqlite3`), in the
-`shrimp_deliveries` table.  This database also keeps track of one delivery
-person, named `Pat`, in the `delivery_people` table.
+`stockroom_items` table.  This database also keeps track of the delivery
+person, named `Pat`, in the `employees` table.
 
-The buffet is represented by the `buffet` queue in the RabbitMQ instance
-running in the Vagrant VM. A web monitoring interface for this instance is
-accessible on your local machine at `http://localhost:15673`. You can log in
-with login: guest and password: guest.
+Orders to have food delivered to the Frying Dutchman and the buffet itself are represented by the `orders` and `buffet` queue respectively in the RabbitMQ instance running in the Vagrant VM. A web monitoring interface for this instance is accessible on your local machine at `http://localhost:15673`. You can log in with login: guest and password: guest.
 
 ### Homer
 
@@ -59,9 +57,11 @@ Homer is a simple python application that endlessly consumes shrimp from the buf
         cd homer
         make start
 
-Notice that he says `Woohoo!` every time he consumes a message from the `buffet` queue.
+Homer says `Woohoo!` every time he consumes a message from the `buffet` queue, but without a delivery person, no shrimp will make it to your stockroom for the Captain to put out on the buffet.  This first challenge fixes that problem.
 
 ## The Challenges
+
+You may have noticed that you can order as many deliveries as you want, but without a delivery person, no shrimp will make it to your stockroom.  This first challenge, The Delivery Person, fixes that problem.
 
 * [The Delivery Person](challenges/delivery_person.md)
 * [The Sea Captain](challenges/sea_captain.md)
