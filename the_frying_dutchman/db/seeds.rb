@@ -5,4 +5,4 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
-DeliveryPerson.create(name: 'Pat', status: 'idle')
+Employee.create([{name: 'Pat', role: 'delivery', status: 'idle'}, {name: 'Sea Captain', role: 'owner', status: 'idle'}])

@@ -9,14 +9,19 @@
           <input type="hidden" name="num_shrimp" value="5" />
           <table class="table">
             <tr>
+              <td><input type="submit" id="order-shrimp-button-id" value="Order Shrimp" name="order"  type="button" class="btn btn-primary btn-block" /></td>
+              <td>Orders in queue:</td>
+              <td><span id="order-in-queue-id" class="badge"><%= @orders_in_queue %></span></td>              
+            </tr>
+            <tr>
+              <td></td>
+              <td>Shrimp in stockroom*:</td>
+              <td><span id="shrimp-in-stockroom-id" class="badge"><%= @shrimp_in_stockroom %></span></td>
+            </tr>                          
+            <tr>
               <td class=btn-block><input type="submit" name="refill" value="Refill Buffet" id="refill-buffet-id" type="button" class="btn btn-primary btn-block" /></td>
               <td>Shrimp in buffet:</td>
               <td><span id="shrimp-in-buffet-id" class="badge"><%= @shrimp_in_buffet %></span></td>
-            </tr>
-            <tr>
-              <td><input type="submit" id="restock-shrimp-button-id" value="Restock Shrimp" name="restock"  type="button" class="btn btn-primary btn-block" /></td>
-              <td>Shrimp in stock room:</td>
-              <td><span id="shrimp-in-stock-room-id" class="badge"><%= @shrimp_in_stock_room %></span></td>
             </tr>
             <tr>
               <td></td>
@@ -31,6 +36,10 @@
           </table>
         </form>
       </div>
-    </div>
+    </div>    
   </div>
 </div>
+<container>
+  <footer>* Shrimp orders not getting delivered?  Check out the delivery person challenge!
+  </footer>
+</container>

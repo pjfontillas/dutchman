@@ -15,7 +15,7 @@ try:
             time.sleep(5)
             print("Woohoo!")
             channel.basic_ack(method.delivery_tag)
-        elif body == 'kale':
+        elif body == 'biscuit':
             time.sleep(30)
             print("D'oh!")
             channel.basic_ack(method.delivery_tag)
