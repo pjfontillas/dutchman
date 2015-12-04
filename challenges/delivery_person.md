@@ -18,3 +18,6 @@ any tools that you want (feel free to add anything that you want to the
 `provisioning.sh` file to make it available in the Vagrant VM).  The only
 requirement is that the program can be started in the Vagrant VM by running
 `make start` in the `delivery_person` directory.
+
+When this challenge is complete, you should see orders moving out of the queue 
+and shrimp showing up in your stockroom on the The Frying Dutchman web page.
