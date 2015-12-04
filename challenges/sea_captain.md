@@ -13,10 +13,6 @@ if the Sea Captain is at work and when he's there throw some biscuits into every
 stretched a bit thin at this point, so more clearly:
 
 * Write a program in the `sea_captain` directory to be run with `make start`.
-* Upon startup, update our captain in the `employee` table to 'working'.
-* When the captain is working, every time the `delivery_person` program makes
-  a delivery, it should put some biscuits in the stockroom that the Captain can place
-  on the buffet to make Homer stop eating shrimp for a while.
-* Upon shutdown, update the captain back to idle.
-* When the captain is idle, should not put biscuits in the stockroom buffet.
+* Update the `delivery_person` program so that when the captain is working, it puts some biscuits in the stockroom with each order.
+* When the captain is idle, the `delivery_person` program should not put biscuits in the stockroom buffet.
   
