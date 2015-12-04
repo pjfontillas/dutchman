@@ -15,5 +15,5 @@ stretched a bit thin at this point, so more clearly:
 
 * Write a program in the `sea_captain` directory to be run with `make start`.
 * Update the `delivery_person` program so that when the captain is working, it puts some biscuits in the stockroom with each order.
-* When the captain is idle, the `delivery_person` program should not put biscuits in the stockroom buffet.
+* When the captain is idle, the `delivery_person` program should not put biscuits in the stockroom buffet as they won't get used and will just go stale.
   
