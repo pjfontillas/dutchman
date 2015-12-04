@@ -21,6 +21,6 @@ requirement is that the program can be started in the Vagrant VM by running
 
 When this challenge is complete, you should see orders moving out of the queue 
 and shrimp showing up in your stockroom on the The Frying Dutchman web page.  You 
-can now be able to click the `Refill Buffet` button to move items from the 
-stockroom, onto the buffet and into Homer's mouth.  You can check out the Homer 
-program to see if he is indeed eating.
+can now click the `Refill Buffet` button to move items from the stockroom, onto 
+the buffet and into Homer's mouth.  You can check out the Homer program to 
+see if he is indeed eating.
