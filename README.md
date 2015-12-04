@@ -20,10 +20,10 @@ assume you will be using this Vagrant environment.
 
 This program is a Rails application that renders a single web page representing
 The Frying Dutchman restaurant from the best Simpsons episode ever.  The Frying
-Dutchman is an all-you-can eat fried seafood restaurant, and this web page
-displays what orders the restaurant has made for food, what is in the stock room, 
-and how many shrimp are out in the buffet.  The page must be reloaded to see any 
-changes in these counts.
+Dutchman is an all-you-can-eat fried seafood restaurant, and this web page
+displays what orders the restaurant has made for food, what food is in the 
+restaurant's stock room, and how many shrimp are out in the buffet.  The page 
+must be reloaded to see any changes in these counts.
 
 To start this program, follow these steps:
 
@@ -37,12 +37,14 @@ To start this program, follow these steps:
 
 1. The application can be accessed on your local machine at `http://localhost:3001`.
 
-The number of shrimp in the stock room is kept in a SQLite database
+The number of shrimp in the stockroom is kept in a SQLite database
 (`/vagrant/the_frying_dutchman/db/development.sqlite3`), in the
 `stockroom_items` table.  This database also keeps track of the delivery
 person, named `Pat`, in the `employees` table.
 
-Orders to have food delivered to the Frying Dutchman and the buffet itself are represented by the `orders` and `buffet` queue respectively in the RabbitMQ instance running in the Vagrant VM. A web monitoring interface for this instance is accessible on your local machine at `http://localhost:15673`. You can log in with login: guest and password: guest.
+Orders to have food delivered to the Frying Dutchman and items available for consumption in the buffet are represented by the `orders` and `buffet` queue respectively in the RabbitMQ instance running in the Vagrant VM. A web monitoring interface for this instance is accessible on your local machine at `http://localhost:15673`. You can log in with login: guest and password: guest.
+
+You can try clicking on the `Order Shrimp` button to add some shrimp orders to the queue.
 
 ### Homer
 
@@ -57,7 +59,7 @@ Homer is a simple python application that endlessly consumes shrimp from the buf
         cd homer
         make start
 
-Homer says `Woohoo!` every time he consumes a message from the `buffet` queue, but without a delivery person, no shrimp will make it to your stockroom for the Captain to put out on the buffet.  This first challenge fixes that problem.
+Homer says `Woohoo!` every time he consumes a message from the `buffet` queue.  You'll probably notice, however, that without a delivery person, no shrimp will make it to your stockroom for the Captain to put out on the buffet.  This first challenge fixes that problem.
 
 ## The Challenges
 
