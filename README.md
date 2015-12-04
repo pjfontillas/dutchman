@@ -63,7 +63,7 @@ Homer says `Woohoo!` every time he consumes a message from the `buffet` queue.  
 
 ## The Challenges
 
-You may have noticed that you can order as many deliveries as you want, but without a delivery person, no shrimp will make it to your stockroom.  This first challenge, The Delivery Person, fixes that problem.
+The following three challenges help complete the system that makes up the Frying Dutchman restaurant.  Check out the details in each challenge for more information on what is required to complete them. 
 
 * [The Delivery Person](challenges/delivery_person.md)
 * [The Sea Captain](challenges/sea_captain.md)
