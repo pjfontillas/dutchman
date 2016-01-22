@@ -27,12 +27,15 @@ sudo rabbitmq-server -detached
 echo "cd /vagrant" >> /home/vagrant/.bashrc
 
 # The Frying Dutchman
+echo "Prepping the Dutchman..."
 cd /vagrant/the_frying_dutchman
 make deps
 make db
-./bin/rake mq:init
+#./bin/rake mq:init
+rake mq:init
 
 # Homer
+echo "Prepping Homer..."
 cd /vagrant/homer
 make clean
 make deps
