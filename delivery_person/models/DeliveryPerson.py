@@ -38,6 +38,7 @@ class DeliveryPerson(object):
         self.rabbitmq = None
         self.on_delivery = False
         self.queue = []
+        self.status = None
 
     def get_contract(self):
         """Getter method for config, used primarily for testing.
@@ -51,6 +52,17 @@ class DeliveryPerson(object):
             "host": self.host,
             "db_path": self.db_path
         }
+
+    def get_status(self):
+        """Sets the employee row 'status' value to 'working'."""
+        self.sqlite = sqlite3.connect(self.db_path)
+        cursor = self.sqlite.cursor()
+        query = "SELECT status FROM employees WHERE name = :name"
+        args = {
+            "name": self.name
+        }
+        cursor.execute(query, args)
+        return cursor.fetchone()[0]
 
     def init(self):
         """Initializes worker shift. Handles interrupts to signal an idle worker."""

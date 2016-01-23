@@ -8,7 +8,7 @@ deps: env
 	env/bin/pip install -r requirements/base.txt $(PIP_OPTS)
 	env/bin/pip install -r requirements/dev.txt $(PIP_OPTS)
 
-test:
+tests:
 	env/bin/python test.py
 
 start:

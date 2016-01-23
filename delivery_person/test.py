@@ -29,6 +29,16 @@ class TestDeliveryPerson(unittest.TestCase):
       self.assertEqual(testHost, "localhost")
       self.assertEqual(testDbPath, "/vagrant/the_frying_dutchman/db/development.sqlite3")
 
+  def test_working_status(self):
+      status = pat.get_status()
+      self.assertEqual(status, "idle")
+      pat.start_working()
+      status = pat.get_status()
+      self.assertEqual(status, "working")
+      pat.stop_working()
+      status = pat.get_status()
+      self.assertEqual(status, "idle")
+
 if __name__ == '__main__':
     # now that we've instantiated our delivery person we test them
     suite = unittest.TestLoader().loadTestsFromTestCase(TestDeliveryPerson)

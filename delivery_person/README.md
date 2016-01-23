@@ -54,4 +54,4 @@ Running `make tests` will run the test suite.
 
 ### Start
 
-Running 'make start' will send Fry, I mean Pat, to work.
+Running `make start` will send Fry, I mean Pat, to work.
