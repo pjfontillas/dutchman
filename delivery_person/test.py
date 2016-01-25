@@ -16,6 +16,10 @@ class TestDeliveryPerson(unittest.TestCase):
 
   # make sure the delivery person has the right config
   def test_valid_contract(self):
+      """Test configuration.
+      Ensure that the values we read from config is what
+      is used in the Delivery Person class.
+      """
       contract = pat.get_contract()
 
       testName = contract["name"]
@@ -30,6 +34,7 @@ class TestDeliveryPerson(unittest.TestCase):
       self.assertEqual(testDbPath, "/vagrant/the_frying_dutchman/db/development.sqlite3")
 
   def test_working_status(self):
+      """Test that the worker status is properly updated."""
       status = pat.get_status()
       self.assertEqual(status, "idle")
       pat.start_working()

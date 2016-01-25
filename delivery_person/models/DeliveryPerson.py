@@ -184,26 +184,25 @@ class DeliveryPerson(object):
         # simulating a delay for travel time
         self.rabbitmq.sleep(SIMULATED_DELAY)
 
-        if count and name:
-            # add delivery to stock
-            self.sqlite = sqlite3.connect(self.db_path)
-            cursor = self.sqlite.cursor()
-            query = "INSERT INTO stockroom_items (name, item_count, created_at, updated_at) VALUES (:name, :count, :created, :updated)"
-            now = datetime.now()
-            args = {
-                "name": name,
-                "count": count,
-                "created": now,
-                "updated": now
-            }
-            cursor.execute(query, args)
-            self.sqlite.commit()
+        # add delivery to stock
+        self.sqlite = sqlite3.connect(self.db_path)
+        cursor = self.sqlite.cursor()
+        query = "INSERT INTO stockroom_items (name, item_count, created_at, updated_at) VALUES (:name, :count, :created, :updated)"
+        now = datetime.now()
+        args = {
+            "name": name,
+            "count": count,
+            "created": now,
+            "updated": now
+        }
+        cursor.execute(query, args)
+        self.sqlite.commit()
 
-            # back from delivery
-            self.on_delivery = False
-            print "%s has returned from a delivery..." % (self.name)
+        # back from delivery
+        self.on_delivery = False
+        print "%s has returned from a delivery..." % (self.name)
 
-            # upon returning look for new queued orders
-            if len(self.queue) != 0:
-                print "%s has %d orders left to fulfill..." % (self.name, len(self.queue))
-                self.process_orders()
+        # upon returning look for new queued orders
+        if len(self.queue) != 0:
+            print "%s has %d orders left to fulfill..." % (self.name, len(self.queue))
+            self.process_orders()
